@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agencia de Marketing</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+color:#222;
+line-height:1.6;
+}
+
+
+/* NAV */
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px;
+
+border-bottom:1px solid #eee;
+
+position:sticky;
+top:0;
+
+background:white;
+
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+nav a{
+
+margin-left:20px;
+text-decoration:none;
+color:#222;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+text-align:center;
+padding:100px 20px;
+
+background:#f5f7fa;
+
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+margin-bottom:20px;
+}
+
+.hero button{
+
+padding:14px 28px;
+
+border:none;
+background:black;
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+/* SECCIONES */
+
+section{
+
+padding:70px 20px;
+text-align:center;
+
+}
+
+.light{
+background:#fafafa;
+}
+
+
+h2{
+margin-bottom:25px;
+}
+
+
+/* SERVICIOS */
+
+.servicios{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.card{
+
+width:260px;
+padding:20px;
+
+border:1px solid #eee;
+
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+
+/* FORMULARIO */
+
+form{
+
+max-width:400px;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+input,textarea{
+
+padding:10px;
+border:1px solid #ccc;
+
+}
+
+button{
+
+padding:12px;
+
+border:none;
+background:black;
+color:white;
+
+cursor:pointer;
+
+}
+
+.msg{
+
+margin-top:10px;
+color:green;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+padding:20px;
+text-align:center;
+
+background:#111;
+color:white;
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:30px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<header>
+
+<div class="logo">
+AGENCIA
+</div>
+
+<nav>
+
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>Hacemos crecer tu negocio</h1>
+
+<p>
+Marketing digital enfocado en resultados
+</p>
+
+<button onclick="irContacto()">
+Solicitar información
+</button>
+
+</section>
+
+
+
+<section id="servicios">
+
+<h2>Servicios</h2>
+
+<div class="servicios">
+
+<div class="card">
+
+<h3>Publicidad</h3>
+
+<p>
+Campañas en Google y redes sociales
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>SEO</h3>
+
+<p>
+Posicionamiento en buscadores
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Web</h3>
+
+<p>
+Páginas rápidas y optimizadas
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="nosotros" class="light">
+
+<h2>Nosotros</h2>
+
+<p>
+
+Somos una agencia especializada en hacer crecer negocios online.
+
+</p>
+
+</section>
+
+
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<form onsubmit="enviar(event)">
+
+<input placeholder="Nombre" required>
+
+<input type="email" placeholder="Email" required>
+
+<textarea placeholder="Mensaje"></textarea>
+
+<button>
+
+Enviar
+
+</button>
+
+</form>
+
+<p id="ok" class="msg"></p>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Agencia Marketing
+
+</footer>
+
+
+
+<script>
+
+/* SCROLL CONTACTO */
+
+function irContacto(){
+
+document
+.getElementById("contacto")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* FORMULARIO */
+
+function enviar(e){
+
+e.preventDefault();
+
+document
+.getElementById("ok")
+.textContent=
+"Mensaje enviado correctamente";
+
+e.target.reset();
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
